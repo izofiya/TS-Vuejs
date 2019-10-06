@@ -6,28 +6,23 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: 'hello',
-  data () {
-    return {
-      message: 'Welcome to Your Vue.js App'
-    }
-  },
+import Vue from 'vue';
+import Component from 'vue-class-component';
 
-  computed: {
-    fullMessage(){
-      return `${this.message} from Typescript`;
-    }
-  },
+@Component({})
+export default class Hello extends Vue {
+  message: string = 'Hello Vue'
+
+  get fullMessage() {
+    return `${this.message} from TypeScript`
+  }
 
   created() {
-    console.log('created');
-  },
+    console.log('created!')
+  }
 
-  methods: {
-    clicked(){
-      console.log('clicked');
-    }
+  clicked() {
+    console.log('clicked')
   }
 }
 </script>
